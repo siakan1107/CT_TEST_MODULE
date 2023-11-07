@@ -6,13 +6,15 @@ locals {
 
 
 module "identity_center_dpc" {
-  source                      = "./modules/"
-  tfc_hostname                = var.tfc_hostname
-  tfc_organization_name       = var.tfc_organization_name
-  tfc_project_name            = var.tfc_project_name
-  dpc_name                    = var.dpc_name
-  vcs_repo_identifier         = var.vcs_repo_identifier
-  vcs_repo_oauth_token_id     = var.vcs_repo_oauth_token_id
+  source                  = "./modules/"
+  tfc_hostname            = var.tfc_hostname
+  tfc_organization_name   = var.tfc_organization_name
+  tfc_project_name        = var.tfc_project_name
+  dpc_name                = var.dpc_name
+  vcs_repo_identifier     = var.vcs_repo_identifier
+  vcs_repo_oauth_token_id = var.vcs_repo_oauth_token_id
+
+  count                       = var.managed_policies != null ? 1 : 0
   managed_policies            = var.managed_policies
   custom_policies             = var.custom_policies
   tfc_provider_arn            = local.tfc_provider_arn
