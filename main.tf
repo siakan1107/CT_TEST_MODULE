@@ -16,7 +16,7 @@ module "identity_center_dpc" {
   custom_policies             = var.custom_policies
   tfc_provider_arn            = local.tfc_provider_arn
   tfc_provider_client_id_list = local.tfc_provider_client_id_list
-  count                       = var.managed_policies == null ? 1 : 0
+  # count                       = var.managed_policies == null ? 1 : 0
   managed_policies            = var.managed_policies
   
 }
