@@ -19,17 +19,3 @@ module "identity_center_dpc" {
   tfc_provider_client_id_list = local.tfc_provider_client_id_list
 }
 
-# module "organization_dpc" {
-#   source                      = "./modules/"
-#   tfc_hostname                = var.tfc_hostname
-#   tfc_organization_name       = var.tfc_organization_name
-#   tfc_project_name            = "INFRA"
-#   dpc_name                    = "organization"
-#   vcs_repo_identifier         = local.vcs_repo_identifier.organization
-#   vcs_repo_oauth_token_id     = local.oauth_token_id
-#   managed_policies            = ["AWSOrganizationsFullAccess"]
-#   tfc_provider_arn            = local.tfc_provider_arn
-#   tfc_provider_client_id_list = local.tfc_provider_client_id_list
-#   custom_policies             = [null]
-
-# }
