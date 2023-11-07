@@ -13,11 +13,11 @@ module "identity_center_dpc" {
   dpc_name                = var.dpc_name
   vcs_repo_identifier     = var.vcs_repo_identifier
   vcs_repo_oauth_token_id = var.vcs_repo_oauth_token_id
-
-  count                       = var.managed_policies == null ? 1 : 0
-  managed_policies            = var.managed_policies
   custom_policies             = var.custom_policies
   tfc_provider_arn            = local.tfc_provider_arn
   tfc_provider_client_id_list = local.tfc_provider_client_id_list
+  count                       = var.managed_policies == null ? 1 : 0
+  managed_policies            = var.managed_policies
+  
 }
 
