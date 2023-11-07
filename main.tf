@@ -9,7 +9,7 @@ locals {
   tfc_organization_name = "CT_TEST_KB"
   # tfc_organization_name       = "KoreanAir_CDSO"
   vcs_repo_identifier = {
-    identity_center = "PRJDEVSECOPS/infra-121754699974-identitycenter"
+    identity_center = "siakan1107/infra-121754699974-identitycenter"
     # organization    = "PRJDEVSECOPS/infra-121754699974-organization"
   }
 }
