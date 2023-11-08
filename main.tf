@@ -18,8 +18,10 @@ module "identity_center_dpc" {
   vcs_repo_oauth_token_id     = local.oauth_token_id
   managed_policies = var.managed_policies
 
+  # for_each = var.custom_policies
+  custom_policies  = each.value  ##identity_center
 
-  custom_policies  = var.custom_policies
 
+fileset("${path.module}/policies/identity_center", "*")
 
 }
