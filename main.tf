@@ -25,3 +25,7 @@ module "identity_center_dpc" {
   
 }
 
+output "managed_policies" {
+  value = var.managed_policies
+  
+}
