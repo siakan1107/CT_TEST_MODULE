@@ -20,7 +20,8 @@ module "identity_center_dpc" {
   custom_policies             = var.custom_policies
 
   # count                       = var.managed_policies != null ? 1 : 0
-  managed_policies            = var.managed_policies
+  for_each = toset(var.managed_policies)
+  managed_policies            = each.value
   
 }
 
