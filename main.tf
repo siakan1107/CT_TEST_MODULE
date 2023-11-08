@@ -19,9 +19,9 @@ module "identity_center_dpc" {
   managed_policies = var.managed_policies
 
   # for_each = var.custom_policies
-  custom_policies  = each.value  ##identity_center
+  custom_policies  = var.custom_policies  ##identity_center
 
 
-fileset("${path.module}/policies/identity_center", "*")
+# fileset("${path.module}/policies/identity_center", "*")
 
 }
