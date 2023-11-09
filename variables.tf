@@ -41,7 +41,10 @@ variable "managed_policies" {
 }
 
 variable "custom_policies" {
-  type        = map(object)
+  type = map(object({
+    Version   = string
+    Statement = list(any)
+  }))
   default     = {}
   description = "The name of your custom_policies"
 }
