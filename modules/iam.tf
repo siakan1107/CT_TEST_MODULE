@@ -55,7 +55,7 @@ output "policy" {
 
 
    role       = aws_iam_role.this.name
-   policy_arn = var.custom_policies.arn
+   policy_arn = var.custom_policies
  }
 
 
