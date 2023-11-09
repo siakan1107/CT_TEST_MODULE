@@ -41,8 +41,8 @@ variable "managed_policies" {
 }
 
 variable "custom_policies" {
-  type = map(any)
-  default     = {}
+  type = string
+  default     = "test"
   description = "The name of your custom_policies"
 }
 
