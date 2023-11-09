@@ -2,9 +2,7 @@ locals {
   oauth_token_id = "ot-gZ8WnNTbRFDhkJtn"
   tfc_provider_arn            = aws_iam_openid_connect_provider.tfc_provider.arn
   tfc_provider_client_id_list = aws_iam_openid_connect_provider.tfc_provider.client_id_list
-
 }
-
 
 module "identity_center_dpc" {
   source                      = "./modules/"
@@ -17,11 +15,5 @@ module "identity_center_dpc" {
   vcs_repo_identifier         = var.vcs_repo_identifier
   vcs_repo_oauth_token_id     = local.oauth_token_id
   managed_policies = var.managed_policies
-
-  # for_each = var.custom_policies
-  custom_policies  = var.custom_policies  ##identity_center
-
-
-# fileset("${path.module}/policies/identity_center", "*")
-
+  custom_policies  = var.custom_policies 
 }

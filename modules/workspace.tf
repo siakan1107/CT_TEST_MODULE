@@ -14,7 +14,6 @@ resource "tfe_variable" "enable_aws_provider_auth" {
   key      = "TFC_AWS_PROVIDER_AUTH"
   value    = "true"
   category = "env"
-
   description = "Enable the Workload Identity integration for AWS."
 }
 
@@ -24,6 +23,5 @@ resource "tfe_variable" "tfc_aws_role_arn" {
   key      = "TFC_AWS_RUN_ROLE_ARN"
   value    = aws_iam_role.this.arn
   category = "env"
-
   description = "The AWS role arn runs will use to authenticate."
 }

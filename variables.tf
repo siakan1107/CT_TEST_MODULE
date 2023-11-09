@@ -1,6 +1,3 @@
-
-
-
 variable "tfc_aws_audience" {
   type        = string
   default     = "aws.workload.identity"
@@ -37,12 +34,6 @@ variable "vcs_repo_identifier" {
   description = "The name of vcs_repo_identifier"
 }
 
-variable "vcs_repo_oauth_token_id" {
-  type        = string
-  default     = "ot-gZ8WnNTbRFDhkJtn"
-  description = "The name of your vcs_repo_oauth_token_id"
-}
-
 variable "managed_policies" {
   type        = list(string)
   default     = []
@@ -54,8 +45,6 @@ variable "custom_policies" {
   default     = []
   description = "The name of your custom_policies"
 }
-
-
 
 variable "region" {
   default     = "ap-northeast-2"
