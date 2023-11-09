@@ -34,10 +34,9 @@ EOF
 
 resource "aws_iam_policy" "custom_policies" {
 
-  # for_each = var.custom_policies
   # name     = join("-", [each.key, "policy"])
-  name = "test"
-  policy   = var.custom_policies
+  name =  var.custom_policies
+  policy   =  file("${path.module}/../policies/identity_center/${var.custom_policies}.json")
 }
 
 
