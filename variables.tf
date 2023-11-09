@@ -42,7 +42,7 @@ variable "managed_policies" {
 
 variable "custom_policies" {
   type        = map(string)
-  default     = []
+  default     = ""
   description = "The name of your custom_policies"
 }
 

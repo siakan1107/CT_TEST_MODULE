@@ -33,7 +33,7 @@ variable "vcs_repo_oauth_token_id" {
 
 variable "custom_policies" {
   description = "filenames with custom policies"
-  default     = []
+  default     = ""
   type        = map(string)
 }
 
