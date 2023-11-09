@@ -32,9 +32,9 @@ variable "vcs_repo_oauth_token_id" {
 }
 
 variable "custom_policies" {
-  description = "filenames with custom policies"
-  default     = null
-  type        = map(string)
+  type        = map(object)
+  default     = {}
+  description = "The name of your custom_policies"
 }
 
 variable "managed_policies" {
