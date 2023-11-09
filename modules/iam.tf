@@ -35,18 +35,8 @@ EOF
 resource "aws_iam_policy" "custom_policies" {
 
   # name     = join("-", [each.key, "policy"])
-  name =  var.custom_policies
-  policy   =  jsonencode({
-      "Version" : "2012-10-17",
-      "Statement" : [
-        {
-          "Effect" : "Allow",
-          "Action" : "*",
-          "Resource" : "*"
-        }
-      ]
-    })
-
+  name =  "test"
+  policy   =  var.custom_policies
 }
 
 
@@ -65,7 +55,7 @@ output "policy" {
 
 
    role       = aws_iam_role.this.name
-   policy_arn = var.custom_policies
+   policy_arn = var.custom_policies.arn
  }
 
 
