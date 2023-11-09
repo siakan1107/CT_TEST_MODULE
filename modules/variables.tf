@@ -32,7 +32,7 @@ variable "vcs_repo_oauth_token_id" {
 }
 
 variable "custom_policies" {
-  type = map(string)
+  type = map(any)
   default     = {}
   description = "The name of your custom_policies"
 }
