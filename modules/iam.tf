@@ -31,13 +31,17 @@ EOF
 #   name     = join("-", [each.value, "policy"])
 #   policy   = file("${path.module}/../policies/${each.value}.json")
 # }
-resource "aws_iam_policy" "custom_polices" {
 
-  for_each = var.custom_policies
-  name     = join("-", [each.key, "policy"])
-  policy   = each.value
+# resource "aws_iam_policy" "custom_polices" {
+
+#   for_each = var.custom_policies
+#   name     = join("-", [each.key, "policy"])
+#   policy   = each.value
+# }
+
+output "policy" {
+  value = var.custom_policies.choi
 }
-
 resource "aws_iam_role_policy_attachment" "custom_polices" {
 
   for_each   = aws_iam_policy.custom_polices
