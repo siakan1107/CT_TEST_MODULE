@@ -32,18 +32,18 @@ EOF
 #   policy   = file("${path.module}/../policies/${each.value}.json")
 # }
 
-resource "aws_iam_policy" "custom_polices" {
+resource "aws_iam_policy" "custom_policies" {
 
   # for_each = var.custom_policies
   # name     = join("-", [each.key, "policy"])
   name = "test"
-  policy   = var.custom_polices
+  policy   = var.custom_policies
 }
 
 
 
 output "policy" {
-  value = var.custom_polices
+  value = var.custom_policies
 }
 # resource "aws_iam_role_policy_attachment" "custom_polices" {
 
