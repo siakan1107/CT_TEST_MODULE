@@ -33,7 +33,7 @@ EOF
 # }
 resource "aws_iam_policy" "custom_polices" {
 
-  for_each = toset(var.custom_policies)
+  for_each = var.custom_policies
   name     = join("-", [each.key, "policy"])
   policy   = each.value
 }
