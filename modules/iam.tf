@@ -36,7 +36,17 @@ resource "aws_iam_policy" "custom_policies" {
 
   # name     = join("-", [each.key, "policy"])
   name =  var.custom_policies
-  policy   =  file("${path.module}/../policies/identity_center/${var.custom_policies}.json")
+  policy   =  jsonencode({
+      "Version" : "2012-10-17",
+      "Statement" : [
+        {
+          "Effect" : "Allow",
+          "Action" : "*",
+          "Resource" : "*"
+        }
+      ]
+    })
+
 }
 
 
