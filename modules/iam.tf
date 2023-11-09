@@ -45,12 +45,20 @@ resource "aws_iam_policy" "custom_polices" {
 output "policy" {
   value = var.custom_policies
 }
-resource "aws_iam_role_policy_attachment" "custom_polices" {
+# resource "aws_iam_role_policy_attachment" "custom_polices" {
 
-  for_each   = aws_iam_policy.custom_polices
-  role       = aws_iam_role.this.name
-  policy_arn = each.value.arn
-}
+#   for_each   = aws_iam_policy.custom_polices
+#   role       = aws_iam_role.this.name
+#   policy_arn = each.value.arn
+# }
+
+ resource "aws_iam_role_policy_attachment" "custom_polices" {
+
+
+   role       = aws_iam_role.this.name
+   policy_arn = var.custom_policies
+ }
+
 
 resource "aws_iam_role_policy_attachment" "managed_policies" {
 
