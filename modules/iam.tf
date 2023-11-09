@@ -37,13 +37,13 @@ resource "aws_iam_policy" "custom_polices" {
   # for_each = var.custom_policies
   # name     = join("-", [each.key, "policy"])
   name = "test"
-  policy   = var.custom_policies
+  policy   = var.custom_polices
 }
 
 
 
 output "policy" {
-  value = var.custom_policies
+  value = var.custom_polices
 }
 # resource "aws_iam_role_policy_attachment" "custom_polices" {
 
