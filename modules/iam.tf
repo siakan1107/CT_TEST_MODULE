@@ -36,7 +36,7 @@ resource "aws_iam_policy" "custom_policies" {
 
   # name     = join("-", [each.key, "policy"])
   name =  "test"
-  policy   =  var.custom_policies
+  policy   =  jsonencode(var.custom_policies)
 }
 
 
