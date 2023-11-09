@@ -25,11 +25,17 @@ resource "aws_iam_role" "this" {
 EOF
 }
 
+# resource "aws_iam_policy" "custom_polices" {
+
+#   for_each = toset(var.custom_policies)
+#   name     = join("-", [each.value, "policy"])
+#   policy   = file("${path.module}/../policies/${each.value}.json")
+# }
 resource "aws_iam_policy" "custom_polices" {
 
   for_each = toset(var.custom_policies)
-  name     = join("-", [each.value, "policy"])
-  policy   = file("${path.module}/../policies/${each.value}.json")
+  name     = join("-", [each.key, "policy"])
+  policy   = jsonencode(each.value)
 }
 
 resource "aws_iam_role_policy_attachment" "custom_polices" {
