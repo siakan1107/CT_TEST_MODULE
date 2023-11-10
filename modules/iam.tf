@@ -35,8 +35,9 @@ EOF
 resource "aws_iam_policy" "custom_policies" {
 
   # name     = join("-", [each.key, "policy"])
-  name   = "test"
-  policy = var.custom_policies
+  for_each = var.custom_policies
+  name   = each.key
+  policy = each.value
 }
 
 
