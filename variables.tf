@@ -41,7 +41,7 @@ variable "managed_policies" {
 }
 
 variable "custom_policies" {
-  type = map(string)
+  type        = map(string)
   default     = {}
   description = "The name of your custom_policies"
 }
@@ -54,4 +54,10 @@ variable "region" {
     condition     = can(regex("(us(-gov)?|ap|ca|cn|eu|sa|me|af)-(central|(north|south)?(east|west)?)-\\d", var.region))
     error_message = "Variable var: region is not valid."
   }
+}
+
+variable "assume_role_arn" {
+  type        = string
+  default     = null
+  description = "The name of AWS assume role"
 }
