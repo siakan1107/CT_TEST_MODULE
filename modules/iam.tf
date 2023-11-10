@@ -55,7 +55,7 @@ resource "aws_iam_role_policy_attachment" "custom_polices" {
 
 
   role       = aws_iam_role.this.name
-  policy_arn = var.custom_policies.arn
+  policy_arn = aws_iam_policy.custom_policies.arn
 }
 
 
