@@ -39,6 +39,8 @@ output "policy" {
 
 resource "aws_iam_role_policy_attachment" "custom_polices" {
 
+  depends_on = [aws_iam_role_policy_attachment.managed_policies]
+
   for_each   = aws_iam_policy.custom_policies
   role       = aws_iam_role.this.name
   policy_arn = each.value.arn
