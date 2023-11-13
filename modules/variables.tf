@@ -45,5 +45,5 @@ variable "managed_policies" {
 
 variable "tfc_provider_arn" {}
 variable "tfc_provider_client_id_list" {
-  type = list(string)
+  type = string
 }

@@ -1,8 +1,3 @@
-variable "tfc_provider_arn" {}
-variable "tfc_provider_client_id_list" {
-  type = list(string)
-}
-
 variable "tfc_aws_audience" {
   type        = string
   default     = "aws.workload.identity"
@@ -65,4 +60,12 @@ variable "assume_role_arn" {
   type        = string
   default     = null
   description = "The name of AWS assume role"
+}
+
+variable "tfc_provider_arn" {
+
+}
+
+variable "tfc_provider_client_id_list" {
+  type = string
 }
