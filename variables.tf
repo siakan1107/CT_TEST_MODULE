@@ -63,9 +63,11 @@ variable "assume_role_arn" {
 }
 
 variable "tfc_provider_arn" {
-
+  type    = string
+  default = null
 }
 
 variable "tfc_provider_client_id_list" {
-  type = string
+  type    = list(string)
+  default = []
 }
