@@ -32,7 +32,7 @@ variable "vcs_repo_oauth_token_id" {
 }
 
 variable "custom_policies" {
-  type = map(string)
+  type        = map(string)
   default     = {}
   description = "The name of your custom_policies"
 }
@@ -44,4 +44,6 @@ variable "managed_policies" {
 }
 
 variable "tfc_provider_arn" {}
-variable "tfc_provider_client_id_list" {}
+variable "tfc_provider_client_id_list" {
+  type = list(string)
+}

@@ -1,5 +1,7 @@
 variable "tfc_provider_arn" {}
-variable "tfc_provider_client_id_list" {}
+variable "tfc_provider_client_id_list" {
+  type = list(string)
+}
 
 variable "tfc_aws_audience" {
   type        = string
