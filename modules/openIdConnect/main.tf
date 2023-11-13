@@ -1,5 +1,5 @@
-data "aws_iam_openid_connect_provider" "example" {
-  url = data.tls_certificate.tfc_certificate.url
+data "tls_certificate" "tfc_certificate" {
+  url = "https://${var.tfc_hostname}"
 }
 resource "aws_iam_openid_connect_provider" "tfc_provider" {
   url             = data.tls_certificate.tfc_certificate.url
