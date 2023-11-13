@@ -25,32 +25,17 @@ resource "aws_iam_role" "this" {
 EOF
 }
 
-# resource "aws_iam_policy" "custom_polices" {
-
-#   for_each = toset(var.custom_policies)
-#   name     = join("-", [each.value, "policy"])
-#   policy   = file("${path.module}/../policies/${each.value}.json")
-# }
-
 resource "aws_iam_policy" "custom_policies" {
 
   # name     = join("-", [each.key, "policy"])
   for_each = var.custom_policies
-  name   = each.key
-  policy = each.value
+  name     = each.key
+  policy   = each.value
 }
-
-
 
 output "policy" {
   value = var.custom_policies
 }
-# resource "aws_iam_role_policy_attachment" "custom_polices" {
-
-#   for_each   = aws_iam_policy.custom_polices
-#   role       = aws_iam_role.this.name
-#   policy_arn = each.value.arn
-# }
 
 resource "aws_iam_role_policy_attachment" "custom_polices" {
 
@@ -58,7 +43,6 @@ resource "aws_iam_role_policy_attachment" "custom_polices" {
   role       = aws_iam_role.this.name
   policy_arn = each.value.arn
 }
-
 
 resource "aws_iam_role_policy_attachment" "managed_policies" {
 
